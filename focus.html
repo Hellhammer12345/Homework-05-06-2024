@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+     
+   .form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+   }
+
+
+   .highlight {
+    border: 2px solid rgb(74, 135, 62);
+    outline: none;
+   }
+
+  
+
+  </style>
+
+  <script>
+
+function validateForm(event) { 
+
+event.preventDefault ();
+
+
+const name = document.getElementById ("name").value;
+const lastName = document.getElementById ("lastName").value;
+const email = document.getElementById ("email").value;
+const phoneNumber = document.getElementById ("phoneNumber").value
+
+
+
+if (name === "") {
+alert ("Name must be fill out");
+return false;}
+
+if (lastName === "") {
+alert ("lastName must be fill out");
+return false;
+}
+
+if (email === "") {
+  alert ("Email must be fill out")
+  return false;
+}
+
+if (phoneNumber === "") {
+alert ("Phone number must be fill out")
+return false;
+
+}
+
+alert ("Form submitted succesfully")
+return true;
+
+
+
+}
+
+   function handleFocus(event) {
+
+    event.target.classList.add ("highlight");
+    
+   }
+
+
+    function handleBlur(event) {
+      event.target.classList.remove ("highlight")
+      
+    }
+
+  </script>
+
+
+  <form id="myForm" class="form" onsubmit="validateForm(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" onfocus="handleFocus(event)" onblur="handleBlur(event)" required>
+    <br><br>
+    <label for="lastname">Last name:</label>
+    <input type="text" id="lastName" name="name" onfocus="handleFocus(event)" onblur="handleBlur(event)">
+    <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" onfocus="handleFocus(event)" onblur="handleBlur(event)">
+    <br><br>
+    <label for="phonenumber">Phone number:</label>
+    <input type="text" id="phoneNumber" name="phonenumber" onfocus="handleFocus(event)" onblur="handleBlur(event)">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+
+
+</body>
+</html>
